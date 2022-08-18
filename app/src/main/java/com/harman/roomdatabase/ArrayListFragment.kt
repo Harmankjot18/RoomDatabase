@@ -12,7 +12,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.harman.roomdatabase.databinding.FragmentArrayListFragmentBinding
 import com.harman.roomdatabase.databinding.NewItemAddLayoutBinding
-import com.harman.roomdatabase.ArrayListFragment as RoomdatabaseArrayListFragment
+
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -25,7 +25,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [RoomdatabaseArrayListFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-abstract class ArrayListFragment : Fragment() ,RecyclerClick{
+ class ArrayListFragment : Fragment() ,RecyclerClick{
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -123,7 +123,7 @@ abstract class ArrayListFragment : Fragment() ,RecyclerClick{
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            com.harman.roomdatabase.ArrayListFragment.apply {
+            ArrayListFragment.apply {
                   Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
