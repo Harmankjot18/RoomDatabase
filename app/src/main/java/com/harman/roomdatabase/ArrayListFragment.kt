@@ -65,6 +65,9 @@ private const val ARG_PARAM2 = "param2"
                 }else if (dialogBinding.etDescription.text.toString().isNullOrEmpty()) {
                     dialogBinding.etDescription.setError("Enter Description")
                 }
+                else if (dialogBinding.etDate1.text.toString().isNullOrEmpty()){
+                    dialogBinding.etDate1.setText("enter date")
+                }
                 else{
                     saveData(dialogBinding.etNewItem.text.toString(), dialogBinding.etDescription.text.toString())
                     dialog.dismiss()
@@ -89,7 +92,7 @@ private const val ARG_PARAM2 = "param2"
             override fun onPostExecute(result: Void?) {
                 super.onPostExecute(result)
                 Toast.makeText(requireContext(), "data saved", Toast.LENGTH_SHORT).show()
-
+              getNotes()
             }
         }
         save().execute()
@@ -137,6 +140,7 @@ private const val ARG_PARAM2 = "param2"
         dialog.window?.setLayout(WindowManager.LayoutParams.MATCH_PARENT,WindowManager.LayoutParams.WRAP_CONTENT)
         dialogBinding.etNewItem.setText(notesEntity.title)
         dialogBinding.etDescription.setText(notesEntity.description)
+        dialogBinding.etDate1.setText(notesEntity.createdDate)
         dialogBinding.btnDelete.visibility = View.VISIBLE
         dialogBinding.btnDelete.setOnClickListener {
             deleteNotes(notesEntity)

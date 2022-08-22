@@ -37,6 +37,21 @@
         android:layout_height="wrap_content"
         android:hint="@string/enter_description"
         />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            />
+        <EditText
+            android:id="@+id/etDate1"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/date"
+            />
     <Button
         android:id="@+id/btnOk"
         android:layout_width="wrap_content"

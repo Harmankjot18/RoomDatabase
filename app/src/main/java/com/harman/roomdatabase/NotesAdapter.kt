@@ -10,6 +10,7 @@ class NotesAdapter(var notesEntity: ArrayList<NotesEntity>, var recyclerClick: R
     class ViewHolder(var view: View): RecyclerView.ViewHolder(view) {
         var title = view.findViewById<TextView>(R.id.tvTitle)
         var desc = view.findViewById<TextView>(R.id.tvDescription)
+        var date =view.findViewById<TextView>(R.id.tvdate)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotesAdapter.ViewHolder {
@@ -20,6 +21,7 @@ class NotesAdapter(var notesEntity: ArrayList<NotesEntity>, var recyclerClick: R
     override fun onBindViewHolder(holder: NotesAdapter.ViewHolder, position: Int) {
         holder.title.setText(notesEntity[position].title)
         holder.desc.setText(notesEntity[position].description)
+        holder.date.setText(notesEntity[position].createdDate)
         holder.view.setOnClickListener {
             recyclerClick.notesClicked(notesEntity[position])
         }
